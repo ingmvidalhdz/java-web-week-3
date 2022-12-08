@@ -1,4 +1,4 @@
-package com.luv2code.web.jdbc;
+package com.code.web;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -50,10 +50,10 @@ public class CandidateDbUtil {
 				String degree = myRs.getString("degree");
 
 				// create new student object
-				Candidate tempStudent = new Candidate(id, firstName, lastName, email, phone, department, degree);
+				Candidate tempCandidate = new Candidate(id, firstName, lastName, email, phone, department, degree);
 
 				// add it to the list of students
-				candidates.add(tempStudent);
+				candidates.add(tempCandidate);
 			}
 
 			return candidates;
@@ -187,16 +187,16 @@ public class CandidateDbUtil {
 			myStmt.setString(5, theCandidate.getDepartment());
 			myStmt.setString(6, theCandidate.getDegree());
 			myStmt.setInt(7, theCandidate.getId());
-
 			// execute SQL statement
 			myStmt.execute();
+                        
 		} finally {
 			// clean up JDBC objects
 			close(myConn, myStmt, null);
 		}
 	}
 
-	public void deleteStudent(String theCandidateId) throws Exception {
+	public void deleteCandidate(String theCandidateId) throws Exception {
 
 		Connection myConn = null;
 		PreparedStatement myStmt = null;
