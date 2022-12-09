@@ -1,6 +1,4 @@
-CREATE DATABASE IF NOT EXISTS `web_shop`
-/*!40100 DEFAULT CHARACTER SET latin1 */
-;
+CREATE DATABASE IF NOT EXISTS `web_shop` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
 USE `web_shop`;
 
@@ -15,6 +13,7 @@ CREATE TABLE `products` (
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 DEFAULT CHARSET = latin1;
 
+<<<<<<< Updated upstream
 /*INSERT VALUES IN TABLE products*/
 INSERT INTO `products` 
     (name, description, content, price, date_register, date_expiration)
@@ -24,3 +23,6 @@ INSERT INTO `products`
     ('Café','nescafe molido','300g','$80.00','2008-7-04','2008-7-04'),
     ('pantalon', 'sahara mezclilla','50g','$5.00','2008-7-04','2008-7-04'),
     ('guitarra','fender acustica','50g','$5.00','2008-7-04','2008-7-04');
+=======
+INSERT INTO `products` VALUES  ('1', 'Zucaritas', '250gr.', '50.0', '2022-12-08', '2022-12-22'), ('2', 'Takis', '67gr.', '15', '2022-12-08', '2023-01-21');
+>>>>>>> Stashed changes
