@@ -3,6 +3,7 @@
 *.classpath
 *.project
 web-candidate-tracker/.gitignore
+.metadata/
 
 # Log file
 *.log
