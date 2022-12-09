@@ -51,6 +51,7 @@ table {
 	width: 100%;
 	background: white;
 	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	border: 1px solid gray;
 }
 
 td {
@@ -59,13 +60,13 @@ td {
 
 th {
 	border-bottom: 1px solid gray;
-	background: #185ADB;
+	background: #FFC947;
 	padding: 10px;
-	color: #FFFFFF;
+	color: #000;
 }
 
 tr {
-	border-top: 1px solid gray;
+	border: 1px solid #000;
 	text-align: center;
 	height: 40px;
 }

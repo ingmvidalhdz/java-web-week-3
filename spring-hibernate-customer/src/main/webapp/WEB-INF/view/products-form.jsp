@@ -23,11 +23,13 @@
 			<form:input path="description" placeholder="Description" />
 			<form:input path="content" placeholder="Content" />
 			<form:input path="price" placeholder="Price" />
-			<form:input path="content" placeholder="Date Register" />
+			<form:input path="dateRegister" placeholder="Date Register" />
+			<form:input path="dateExpiration" placeholder="Date Caduced" />
 			<input type="submit" value="Save" class="save" />
 			<div class="container-back center">
-				<a class="btn-back" href="${pageContext.request.contextPath}/products/list">Back
-					to List</a>
+				<a class="btn-back"
+					href="${pageContext.request.contextPath}/products/list">Back to
+					List</a>
 			</div>
 		</form:form>
 	</div>

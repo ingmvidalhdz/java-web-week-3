@@ -14,7 +14,7 @@
 		</div>
 		<div class="container-content center">
 			<!-- put new button: Add Customer -->
-			<input class="btn-add" type="button" value="Add Customer"
+			<input class="btn-add" type="button" value="Add Product"
 				onclick="window.location.href='showFormForAdd'; return false;"
 				class="add-button" />
 			<!--  add our html table here -->
