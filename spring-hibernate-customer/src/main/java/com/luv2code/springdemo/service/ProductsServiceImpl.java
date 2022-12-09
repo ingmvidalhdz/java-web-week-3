@@ -6,16 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.luv2code.springdemo.dao.CustomerDAO;
 import com.luv2code.springdemo.entity.Customer;
 import com.luv2code.springdemo.entity.Products;
+import com.luv2code.springdemo.dao.ProductsDAO;
 
 @Service
-public class CustomerServiceImpl implements CustomerService {
+public class ProductsServiceImpl implements ProductsService {
 
 	// need to inject customer dao
 	@Autowired
-	private CustomerDAO customerDAO;
+	private ProductsDAO customerDAO;
 	
 	@Override
 	@Transactional

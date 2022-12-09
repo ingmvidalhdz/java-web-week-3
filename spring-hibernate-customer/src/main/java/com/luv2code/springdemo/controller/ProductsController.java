@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.luv2code.springdemo.entity.Customer;
 import com.luv2code.springdemo.entity.Products;
-import com.luv2code.springdemo.service.CustomerService;
+import com.luv2code.springdemo.service.ProductsService;
 
 @Controller
 @RequestMapping("/products")
-public class CustomerController {
+public class ProductsController {
 
 	// need to inject our customer service
 	@Autowired
-	private CustomerService customerService;
+	private ProductsService customerService;
 	
 	@GetMapping("/list")
 	public String listCustomers(Model theModel) {
