@@ -12,7 +12,7 @@ import com.luv2code.springdemo.entity.Customer;
 import com.luv2code.springdemo.entity.Products;
 
 @Repository
-public class CustomerDAOImpl implements CustomerDAO {
+public class ProductsDAOImpl implements ProductsDAO {
 
 	// need to inject the session factory
 	@Autowired
