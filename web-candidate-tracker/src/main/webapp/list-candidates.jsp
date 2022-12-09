@@ -15,7 +15,7 @@
 		<div class="content center">
 			<!-- put new button: Add Student -->
 			<input class="btn-add" type="button" value="Add Candidate"
-				onclick="window.location.href='add-student-form.html'; return false;" />
+				onclick="window.location.href='add-candidate-form.html'; return false;" />
 			<table class="table-content center">
 				<tr>
 					<th>First Name</th>
@@ -27,27 +27,27 @@
 					<th></th>
 					<th></th>
 				</tr>
-				<c:forEach var="tempStudent" items="${LISTA_CANDIDATOS}">
-					<!-- set up a link for each student -->
+				<c:forEach var="tempCandidate" items="${LISTA_CANDIDATOS}">
+					<!-- set up a link for each candidate -->
 					<c:url var="tempLink" value="CandidateControllerServlet">
 						<c:param name="command" value="LOAD" />
-						<c:param name="studentId" value="${tempStudent.id}" />
+						<c:param name="candidateId" value="${tempCandidate.id}" />
 					</c:url>
 					<!--  set up a link to delete a student -->
 					<c:url var="deleteLink" value="CandidateControllerServlet">
 						<c:param name="command" value="DELETE" />
-						<c:param name="studentId" value="${tempStudent.id}" />
+						<c:param name="candidateId" value="${tempCandidate.id}" />
 					</c:url>
 					<tr>
-						<td>${tempStudent.name}</td>
-						<td>${tempStudent.lastName}</td>
-						<td>${tempStudent.email}</td>
-						<td>${tempStudent.phone}</td>
-						<td>${tempStudent.department}</td>
-						<td>${tempStudent.degree}</td>
+						<td>${tempCandidate.name}</td>
+						<td>${tempCandidate.lastName}</td>
+						<td>${tempCandidate.email}</td>
+						<td>${tempCandidate.phone}</td>
+						<td>${tempCandidate.department}</td>
+						<td>${tempCandidate.degree}</td>
 						<td><a class="btn-update" href="${tempLink}">Update</a></td>
 						<td><a class="btn-delete" href="${deleteLink}"
-							onclick="if (!(confirm('Are you sure you want to delete this student?'))) return false">
+							onclick="if (!(confirm('Are you sure you want to delete this candidate?'))) return false">
 								Delete</a></td>
 					</tr>
 				</c:forEach>
