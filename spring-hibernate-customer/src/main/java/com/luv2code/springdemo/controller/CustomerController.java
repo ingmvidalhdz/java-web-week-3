@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.luv2code.springdemo.entity.Customer;
+import com.luv2code.springdemo.entity.Products;
 import com.luv2code.springdemo.service.CustomerService;
 
 @Controller
-@RequestMapping("/customer")
+@RequestMapping("/products")
 public class CustomerController {
 
 	// need to inject our customer service
@@ -26,55 +27,55 @@ public class CustomerController {
 	public String listCustomers(Model theModel) {
 		
 		// get customers from the service
-		List<Customer> theCustomers = customerService.getCustomers();
+		List<Products> theProducts = customerService.getCustomers();
 				
 		// add the customers to the model
-		theModel.addAttribute("customers", theCustomers);
+		theModel.addAttribute("products", theProducts);
 		
-		return "list-customers";
+		return "list-products";
 	}
 	
 	@GetMapping("/showFormForAdd")
 	public String showFormForAdd(Model theModel) {
 		
 		// create model attribute to bind form data
-		Customer theCustomer = new Customer();
+		Products theProducts = new Products();
 		
-		theModel.addAttribute("customer", theCustomer);
+		theModel.addAttribute("products", theProducts);
 		
-		return "customer-form";
+		return "products-form";
 	}
 	
 	@PostMapping("/saveCustomer")
-	public String saveCustomer(@ModelAttribute("customer") Customer theCustomer) {
+	public String saveCustomer(@ModelAttribute("products") Products theProduct) {
 		
 		// save the customer using our service
-		customerService.saveCustomer(theCustomer);	
+		customerService.saveCustomer(theProduct);	
 		
-		return "redirect:/customer/list";
+		return "redirect:/products/list";
 	}
 	
 	@GetMapping("/showFormForUpdate")
-	public String showFormForUpdate(@RequestParam("customerId") int theId,
+	public String showFormForUpdate(@RequestParam("productsId") int theId,
 									Model theModel) {
 		
 		// get the customer from our service
-		Customer theCustomer = customerService.getCustomer(theId);	
+		Products theCustomer = customerService.getCustomer(theId);	
 		
 		// set customer as a model attribute to pre-populate the form
-		theModel.addAttribute("customer", theCustomer);
+		theModel.addAttribute("products", theCustomer);
 		
 		// send over to our form		
-		return "customer-form";
+		return "products-form";
 	}
 	
 	@GetMapping("/delete")
-	public String deleteCustomer(@RequestParam("customerId") int theId) {
+	public String deleteCustomer(@RequestParam("productsId") int theId) {
 		
 		// delete the customer
 		customerService.deleteCustomer(theId);
 		
-		return "redirect:/customer/list";
+		return "redirect:/products/list";
 	}
 }
 

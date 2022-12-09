@@ -3,14 +3,15 @@ package com.luv2code.springdemo.dao;
 import java.util.List;
 
 import com.luv2code.springdemo.entity.Customer;
+import com.luv2code.springdemo.entity.Products;
 
 public interface CustomerDAO {
 
-	public List<Customer> getCustomers();
+	public List<Products> getCustomers();
 
-	public void saveCustomer(Customer theCustomer);
+	public void saveCustomer(Products theCustomer);
 
-	public Customer getCustomer(int theId);
+	public Products getCustomer(int theId);
 
 	public void deleteCustomer(int theId);
 	

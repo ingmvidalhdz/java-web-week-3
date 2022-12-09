@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.luv2code.springdemo.entity.Customer;
+import com.luv2code.springdemo.entity.Products;
 
 @Repository
 public class CustomerDAOImpl implements CustomerDAO {
@@ -18,42 +19,42 @@ public class CustomerDAOImpl implements CustomerDAO {
 	private SessionFactory sessionFactory;
 			
 	@Override
-	public List<Customer> getCustomers() {
+	public List<Products> getCustomers() {
 		
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 				
 		// create a query  ... sort by last name
-		Query<Customer> theQuery = 
-				currentSession.createQuery("from Customer order by lastName",
-											Customer.class);
-		
+		Query<Products> theQuery = 
+				currentSession.createQuery("from Products order by name",
+											Products.class);
+                System.out.println("theQuery = " + theQuery);
 		// execute query and get result list
-		List<Customer> customers = theQuery.getResultList();
+		List<Products> products = theQuery.getResultList();
 				
 		// return the results		
-		return customers;
+		return products;
 	}
 
 	@Override
-	public void saveCustomer(Customer theCustomer) {
+	public void saveCustomer(Products theProduct) {
 
 		// get current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// save/upate the customer ... finally LOL
-		currentSession.saveOrUpdate(theCustomer);
+		currentSession.saveOrUpdate(theProduct);
 		
 	}
 
 	@Override
-	public Customer getCustomer(int theId) {
+	public Products getCustomer(int theId) {
 
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// now retrieve/read from database using the primary key
-		Customer theCustomer = currentSession.get(Customer.class, theId);
+		Products theCustomer = currentSession.get(Products.class, theId);
 		
 		return theCustomer;
 	}
@@ -66,8 +67,8 @@ public class CustomerDAOImpl implements CustomerDAO {
 		
 		// delete object with primary key
 		Query theQuery = 
-				currentSession.createQuery("delete from Customer where id=:customerId");
-		theQuery.setParameter("customerId", theId);
+				currentSession.createQuery("delete from Products where id=:productsId");
+		theQuery.setParameter("productsId", theId);
 		
 		theQuery.executeUpdate();		
 	}

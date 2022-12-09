@@ -22,31 +22,29 @@
 				<tr>
 					<th>Name</th>
 					<th>Description</th>
-					<th>Email</th>
 					<th>Content</th>
 					<th>Price</th>
-					<th>Register</th>
-					<th>Expiration</th>
+					<th>Date Register</th>
+					<th>Date Caduced</th>
 					<th>Action</th>
 				</tr>
 				<!-- loop over and print our customers -->
-				<c:forEach var="tempCustomer" items="${customers}">
+				<c:forEach var="tempProducts" items="${products}">
 					<!-- construct an "update" link with customer id -->
-					<c:url var="updateLink" value="/customer/showFormForUpdate">
-						<c:param name="customerId" value="${tempCustomer.id}" />
+					<c:url var="updateLink" value="/products/showFormForUpdate">
+						<c:param name="productsId" value="${tempProducts.id}" />
 					</c:url>
 					<!-- construct an "delete" link with customer id -->
-					<c:url var="deleteLink" value="/customer/delete">
-						<c:param name="customerId" value="${tempCustomer.id}" />
+					<c:url var="deleteLink" value="/products/delete">
+						<c:param name="productsId" value="${tempProducts.id}" />
 					</c:url>
 					<tr>
-						<td>${tempCustomer.firstName}</td>
-						<td>${tempCustomer.lastName}</td>
-						<td>${tempCustomer.email}</td>
-						<td>${tempCustomer.firstName}</td>
-						<td>${tempCustomer.lastName}</td>
-						<td>${tempCustomer.email}</td>
-						<td>${tempCustomer.firstName}</td>
+						<td>${tempProducts.name}</td>
+						<td>${tempProducts.description}</td>
+						<td>${tempProducts.content}</td>
+						<td>${tempProducts.price}</td>
+						<td>${tempProducts.dateRegister}</td>
+						<td>${tempProducts.dateExpiration}</td>
 						<td>
 							<!-- display the update link --> <a class="btn-update" href="${updateLink}">Update</a>
 							| <a class="btn-delete" href="${deleteLink}"
