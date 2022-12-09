@@ -21,9 +21,6 @@
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Email</th>
-					<th>Phone</th>
-					<th>Deparment</th>
-					<th>Degree</th>
 					<th></th>
 					<th></th>
 				</tr>
@@ -42,10 +39,7 @@
 						<td>${tempCandidate.name}</td>
 						<td>${tempCandidate.lastName}</td>
 						<td>${tempCandidate.email}</td>
-						<td>${tempCandidate.phone}</td>
-						<td>${tempCandidate.department}</td>
-						<td>${tempCandidate.degree}</td>
-						<td><a class="btn-update" href="${tempLink}">Update</a></td>
+						<td><a class="btn-update" href="${tempLink}">Show More</a></td>
 						<td><a class="btn-delete" href="${deleteLink}"
 							onclick="if (!(confirm('Are you sure you want to delete this candidate?'))) return false">
 								Delete</a></td>

@@ -4,7 +4,7 @@
 }
 
 .container {
-	background-image: url(fondo.jpg);
+	background-image: url(fondo.jpeg);
 	background-size: cover;
 	height: 90vh;
 }
@@ -112,7 +112,7 @@ tr:nth-child(odd) {
 }
 
 .btn-update {
-	background: orange;
+	background: #0461BD;
 	text-decoration: none;
 }
 
@@ -129,7 +129,7 @@ tr:nth-child(odd) {
 }
 
 .btn-update:hover {
-	color: orange;
+	color: #0461BD;
 	background: white;
 }
 
