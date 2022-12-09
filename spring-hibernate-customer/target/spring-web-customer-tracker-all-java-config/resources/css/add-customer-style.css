@@ -1,0 +1,115 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.title-page {
+	text-align: center;
+	font-size: 40px;
+	color: #0A1931;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container {
+	background-image: url(fondo.jpg);
+	background-size: cover;
+	height: 100vh;
+}
+
+.container-title {
+	width: 100%;
+	background: #FFC947;
+	height: 5vh;
+	padding: 20px;
+}
+
+.title-app {
+	text-align: center;
+	font-size: 50px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	animation: pulse 0.5s ease-in;
+	color: white;
+	line-height: 2;
+}
+
+.title-form {
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	margin: 20px 0;
+	color: white;
+}
+
+.center {
+	margin: 0px auto;
+}
+
+.form {
+	width: 50%;
+	border: 1px solid black;
+	background: rgba(10, 25, 49, 0.9);
+	margin: 50px auto;;
+}
+
+label {
+	font-size: 16px;
+	width: 100px;
+	display: block;
+	text-align: right;
+	margin-right: 10px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+input {
+	width: 90%;
+	border: 1px solid #666;
+	border-radius: 5px;
+	display: block;
+	margin: 20px auto;
+	padding: 10px;
+	font-size: 16px;
+	margin: 20px auto;
+}
+
+.label-form {
+	color: white;
+	font-size: 20px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.save {
+	font-weight: bold;
+	font-size: 20px;
+	width: 50%;
+	padding: 5px 10px;
+	margin-top: 30px;
+	background: #047ED8;
+	color: white;
+	width: 50%;
+}
+
+.save:hover {
+	background: white;
+	color: #047ED8;
+	border: 1px solid #047ED8;
+}
+
+.container-back {
+	background: red;
+	width: 48%;
+	padding: 10px;
+	text-align: center;
+	margin-bottom: 10px;
+	padding: 5px 10px;
+	border-radius: 10px;
+	border: 1px solid #666;
+}
+
+.btn-back {
+	font-weight: bold;
+	font-size: 20px;
+	width: 50%;
+	color: white;
+	text-decoration: none;
+}

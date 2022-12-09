@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.luv2code.springdemo.dao.CustomerDAO;
 import com.luv2code.springdemo.entity.Customer;
+import com.luv2code.springdemo.entity.Products;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -18,20 +19,20 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Override
 	@Transactional
-	public List<Customer> getCustomers() {
+	public List<Products> getCustomers() {
 		return customerDAO.getCustomers();
 	}
 
 	@Override
 	@Transactional
-	public void saveCustomer(Customer theCustomer) {
+	public void saveCustomer(Products theProduct) {
 
-		customerDAO.saveCustomer(theCustomer);
+		customerDAO.saveCustomer(theProduct);
 	}
 
 	@Override
 	@Transactional
-	public Customer getCustomer(int theId) {
+	public Products getCustomer(int theId) {
 		
 		return customerDAO.getCustomer(theId);
 	}
