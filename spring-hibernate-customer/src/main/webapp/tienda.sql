@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS `web_shop`
+/*!40100 DEFAULT CHARACTER SET latin1 */
+;
+
+USE `web_shop`;
+
+CREATE TABLE `products` (
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(45) DEFAULT NULL,
+    `content` VARCHAR(45) DEFAULT NULL,
+    `price` VARCHAR(45) DEFAULT NULL,
+    `url` VARCHAR(45) DEFAULT NULL,
+    `date_register` DATE DEFAULT NULL,
+    `date_expiration` DATE DEFAULT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB AUTO_INCREMENT = 6 DEFAULT CHARSET = latin1;
