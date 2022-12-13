@@ -1,0 +1,139 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.container {
+	background-image: url(fondo.jpeg);
+	background-size: cover;
+	height: 90vh;
+}
+
+.container-title {
+	background-image: linear-gradient(to right, #122942, #145f8b);
+	width: 100vw;
+	height: 10vh;
+}
+
+.title-app {
+	text-align: center;
+	font-size: 50px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	animation: pulse 0.5s ease-in;
+	color: white;
+	line-height: 2;
+}
+
+.center {
+	margin: 0px auto;
+}
+
+.content {
+	width: 90%;
+}
+
+@keyframes pulse {
+	from { 
+		opacity:0;
+		margin-right: 1500px;
+	}
+	to {
+		opacity: 1;
+		margin-right: 0px;
+	}
+}
+.table-content {
+	width: 100%;
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	font-size: 20px;
+	border-collapse: collapse;
+	border: 1px solid gray;
+	border-radius: 10px;
+}
+
+th {
+	border-bottom: 1px solid gray;
+	background: #209ed8;
+	padding: 10px;
+	color: #FFFFFF;
+}
+
+tr {
+	border-top: 1px solid gray;
+	text-align: center;
+	height: 40px;
+}
+
+tr:nth-child(even) {
+	background: #FFFFFF
+}
+
+tr:nth-child(odd) {
+	background: #DFDFDF;
+}
+
+#wrapper {
+	width: 100%;
+	margin-top: 0px;
+}
+
+#header {
+	width: 70%;
+	background: #0775d3;
+	margin-top: 0px;
+	padding: 15px 0px 15px 15px;
+}
+
+#header h2 {
+	width: 100%;
+	margin: auto;
+	color: #FFFFFF;
+}
+
+#container h3 {
+	color: #000;
+}
+
+
+.btn-add {
+	background: green;
+	font-size: 20px;
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
+	margin: 20px 0;
+	border: none;
+}
+
+.btn-add:hover {
+	background: white;
+	color: green;
+	border: 1px solid green;
+}
+
+.btn-update {
+	background: #0461BD;
+	text-decoration: none;
+}
+
+.btn-delete {
+	background: red;
+	text-decoration: none;
+}
+
+.btn-update,
+.btn-delete {
+	color: white;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.btn-update:hover {
+	color: #0461BD;
+	background: white;
+}
+
+.btn-delete:hover {
+	color: red;
+	background: white;
+}

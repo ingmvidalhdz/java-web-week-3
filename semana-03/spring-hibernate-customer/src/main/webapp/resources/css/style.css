@@ -1,0 +1,107 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.title-page {
+	text-align: center;
+	font-size: 40px;
+	color: #0A1931;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container {
+	background-image: url(fondo.jpg);
+	background-size: cover;
+	height: 100vh;
+}
+
+.container-title {
+	width: 100%;
+	background: #FFC947;
+	height: 5vh;
+	padding: 20px;
+}
+
+.center {
+	margin: 0px auto;
+}
+
+.container-content {
+	width: 80%;
+}
+
+.btn-add {
+	background: green;
+	font-size: 20px;
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
+	margin: 20px 0;
+	border: none;
+}
+
+.btn-add:hover {
+	background: white;
+	color: green;
+	border: 1px solid green;
+}
+
+table {
+	width: 100%;
+	background: white;
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	border: 1px solid gray;
+}
+
+td {
+	text-align: center;
+}
+
+th {
+	border-bottom: 1px solid gray;
+	background: #FFC947;
+	padding: 10px;
+	color: #000;
+}
+
+tr {
+	border: 1px solid #000;
+	text-align: center;
+	height: 40px;
+}
+
+tr:nth-child(even) {
+	background: #FFFFFF
+}
+
+tr:nth-child(odd) {
+	background: #DFDFDF;
+}
+
+.btn-update {
+	background: #0461BD;
+	text-decoration: none;
+}
+
+.btn-delete {
+	background: red;
+	text-decoration: none;
+}
+
+.btn-update,
+.btn-delete {
+	color: white;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.btn-update:hover {
+	color: #0461BD;
+	background: white;
+}
+
+.btn-delete:hover {
+	color: red;
+	background: white;
+}
