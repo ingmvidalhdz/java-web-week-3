@@ -8,7 +8,6 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.luv2code.springboot.cruddemo.entity.Employee;
 import com.luv2code.springboot.cruddemo.entity.Morido;
 
 import org.hibernate.Session;
@@ -47,14 +46,14 @@ public class MoridoDAOJdbcImpl implements MoridoDAO {
                 String nombre = myRs.getString("nombre");
                 String apellidos = myRs.getString("apellidos");
                 int edad = myRs.getInt("edad");
-                String fechaMoricion = myRs.getString("fechaMoricion");
-                String horaMoricion = myRs.getString("horaMoricion");
-                String lugarMoricion = myRs.getString("lugarMoricion");
-                String causaMoricion = myRs.getString("causaMoricion");
+                String fechaMoricion = myRs.getString("fecha_moricion");
+                String horaMoricion = myRs.getString("hora_moricion");
+                String lugarMoricion = myRs.getString("lugar_moricion");
+                String causaMoricion = myRs.getString("causa_moricion");
 
 
                 // create new student object
-                Morido tempMorido = new Morido(id, nombre, apellidos, edad, fechaMoricion, horaMoricion, lugarMoricion, causaMoricion);
+                Morido tempMorido = new Morido (id, nombre, apellidos, edad, fechaMoricion, horaMoricion, lugarMoricion, causaMoricion);
 
                 // add it to the list of students
                 listaMoridos.add(tempMorido);
@@ -88,6 +87,7 @@ public class MoridoDAOJdbcImpl implements MoridoDAO {
 
                 // use the studentId during construction
                 theMorido = new Morido(theId, nombre, apellidos, edad, fechaMoricion, horaMoricion, lugarMoricion, causaMoricion);
+                System.out.println("theMorido = " + theMorido.toString());
             } else {
                 throw new SQLException("Could not find morido id: " + theId);
             }

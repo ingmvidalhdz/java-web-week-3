@@ -12,32 +12,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.luv2code.springboot.cruddemo.entity.Employee;
-import com.luv2code.springboot.cruddemo.service.EmployeeService;
+import com.luv2code.springboot.cruddemo.entity.Morido;
+import com.luv2code.springboot.cruddemo.service.MoridoService;
 
 @RestController
 @RequestMapping("/rest")
 public class EmployeeRestController {
 
-	private EmployeeService employeeService;
+	private MoridoService employeeService;
 	
 	@Autowired
-	public EmployeeRestController(EmployeeService theEmployeeService) {
+	public EmployeeRestController(MoridoService theEmployeeService) {
 		employeeService = theEmployeeService;
 	}
 	
 	// expose "/employees" and return list of employees
 	@GetMapping("/employees")
-	public List<Employee> findAll() {
+	public List<Morido> findAll() {
 		return employeeService.findAll();
 	}
 
 	// add mapping for GET /employees/{employeeId}
 	
 	@GetMapping("/employees/{employeeId}")
-	public Employee getEmployee(@PathVariable int employeeId) throws Exception {
+	public Morido getEmployee(@PathVariable int employeeId) throws Exception {
 		
-		Employee theEmployee = employeeService.findById(employeeId);
+		Morido theEmployee = employeeService.findById(employeeId);
 		
 		if (theEmployee == null) {
 			throw new Exception("Employee id not found - " + employeeId);
@@ -49,7 +49,7 @@ public class EmployeeRestController {
 	// add mapping for POST /employees - add new employee
 	
 	@PostMapping("/employees")
-	public Employee addEmployee(@RequestBody Employee theEmployee) {
+	public Morido addEmployee(@RequestBody Morido theEmployee) {
 		
 		// also just in case they pass an id in JSON ... set id to 0
 		// this is to force a save of new item ... instead of update
@@ -64,7 +64,7 @@ public class EmployeeRestController {
 	// add mapping for PUT /employees - update existing employee
 	
 	@PutMapping("/employees")
-	public Employee updateEmployee(@RequestBody Employee theEmployee) {
+	public Morido updateEmployee(@RequestBody Morido theEmployee) {
 		
 		employeeService.save(theEmployee);
 		
@@ -76,7 +76,7 @@ public class EmployeeRestController {
 	@DeleteMapping("/employees/{employeeId}")
 	public String deleteEmployee(@PathVariable int employeeId) {
 		
-		Employee tempEmployee = employeeService.findById(employeeId);
+		Morido tempEmployee = employeeService.findById(employeeId);
 		
 		// throw exception if null
 		
