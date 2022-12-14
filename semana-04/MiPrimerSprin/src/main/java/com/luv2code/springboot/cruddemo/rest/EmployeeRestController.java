@@ -19,74 +19,74 @@ import com.luv2code.springboot.cruddemo.service.MoridoService;
 @RequestMapping("/rest")
 public class EmployeeRestController {
 
-	private MoridoService employeeService;
+	private MoridoService moridoService;
 	
 	@Autowired
-	public EmployeeRestController(MoridoService theEmployeeService) {
-		employeeService = theEmployeeService;
+	public EmployeeRestController(MoridoService theMoridoService) {
+		moridoService = theMoridoService;
 	}
 	
 	// expose "/employees" and return list of employees
-	@GetMapping("/employees")
+	@GetMapping("/moridos")
 	public List<Morido> findAll() {
-		return employeeService.findAll();
+		return moridoService.findAll();
 	}
 
 	// add mapping for GET /employees/{employeeId}
 	
-	@GetMapping("/employees/{employeeId}")
-	public Morido getEmployee(@PathVariable int employeeId) throws Exception {
+	@GetMapping("/moridos/{moridoId}")
+	public Morido getEmployee(@PathVariable int moridoId) throws Exception {
 		
-		Morido theEmployee = employeeService.findById(employeeId);
+		Morido theMorido = moridoService.findById(moridoId);
 		
-		if (theEmployee == null) {
-			throw new Exception("Employee id not found - " + employeeId);
+		if (theMorido == null) {
+			throw new Exception("Morido id not found - " + moridoId);
 		}
 		
-		return theEmployee;
+		return theMorido;
 	}
 	
 	// add mapping for POST /employees - add new employee
 	
-	@PostMapping("/employees")
-	public Morido addEmployee(@RequestBody Morido theEmployee) {
+	@PostMapping("/moridos")
+	public Morido addEmployee(@RequestBody Morido theMorido) {
 		
 		// also just in case they pass an id in JSON ... set id to 0
 		// this is to force a save of new item ... instead of update
 		
-		theEmployee.setId(0);
+		theMorido.setId(0);
 		
-		employeeService.save(theEmployee);
+		moridoService.save(theMorido);
 		
-		return theEmployee;
+		return theMorido;
 	}
 	
 	// add mapping for PUT /employees - update existing employee
 	
-	@PutMapping("/employees")
-	public Morido updateEmployee(@RequestBody Morido theEmployee) {
+	@PutMapping("/moridos")
+	public Morido updateEmployee(@RequestBody Morido theMorido) {
 		
-		employeeService.save(theEmployee);
+		moridoService.save(theMorido);
 		
-		return theEmployee;
+		return theMorido;
 	}
 	
 	// add mapping for DELETE /employees/{employeeId} - delete employee
 	
-	@DeleteMapping("/employees/{employeeId}")
-	public String deleteEmployee(@PathVariable int employeeId) {
+	@DeleteMapping("/moridos/{moridoId}")
+	public String deleteEmployee(@PathVariable int moridoId) {
 		
-		Morido tempEmployee = employeeService.findById(employeeId);
+		Morido tempMorido = moridoService.findById(moridoId);
 		
 		// throw exception if null
 		
-		if (tempEmployee == null) {
-			throw new RuntimeException("Employee id not found - " + employeeId);
+		if (tempMorido == null) {
+			throw new RuntimeException("Morido id not found - " + moridoId);
 		}
 		
-		employeeService.deleteById(employeeId);
+		moridoService.deleteById(moridoId);
 		
-		return "Deleted employee id - " + employeeId;
+		return "Deleted morido id - " + moridoId;
 	}
 	
 }
