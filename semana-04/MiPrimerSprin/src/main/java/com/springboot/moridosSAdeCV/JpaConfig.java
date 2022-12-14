@@ -1,4 +1,4 @@
-package com.luv2code.springboot.cruddemo;
+package com.springboot.moridosSAdeCV;
 
 import javax.sql.DataSource;
 

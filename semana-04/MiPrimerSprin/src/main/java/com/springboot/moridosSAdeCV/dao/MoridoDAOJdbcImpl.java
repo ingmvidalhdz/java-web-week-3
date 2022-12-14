@@ -1,4 +1,4 @@
-package com.luv2code.springboot.cruddemo.dao;
+package com.springboot.moridosSAdeCV.dao;
 
 import java.sql.*;
 import java.util.*;
@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.luv2code.springboot.cruddemo.entity.Morido;
+import com.springboot.moridosSAdeCV.entity.Morido;
 
 import org.hibernate.Session;
 
@@ -80,13 +80,13 @@ public class MoridoDAOJdbcImpl implements MoridoDAO {
                 String nombre = myRs.getString("nombre");
                 String apellidos = myRs.getString("apellidos");
                 int edad = myRs.getInt("edad");
-                String fechaMoricion = myRs.getString("fechaMoricion");
-                String horaMoricion = myRs.getString("horaMoricion");
-                String lugarMoricion = myRs.getString("lugarMoricion");
-                String causaMoricion = myRs.getString("causaMoricion");
+                String fechaMoricion = myRs.getString("fecha_moricion");
+                String horaMoricion = myRs.getString("hora_moricion");
+                String lugarMoricion = myRs.getString("lugar_moricion");
+                String causaMoricion = myRs.getString("causa_moricion");
 
                 // use the studentId during construction
-                theMorido = new Morido(theId, nombre, apellidos, edad, fechaMoricion, horaMoricion, lugarMoricion, causaMoricion);
+                theMorido = new Morido(theId, nombre, apellidos, edad, fechaMoricion, horaMoricion,lugarMoricion, causaMoricion);
                 System.out.println("theMorido = " + theMorido.toString());
             } else {
                 throw new SQLException("Could not find morido id: " + theId);
@@ -102,11 +102,11 @@ public class MoridoDAOJdbcImpl implements MoridoDAO {
         // TODO Auto-generated method stub
         String sql = null;
         if (theMorido.getId() == 0) {
-            sql = "insert into morido (nombre, apellidos, edad, fechaMoricion, horaMoricion, lugarMoricion, causaMoricion) VALUES (?,?,?,?,?,?,?)";
+            sql = "insert into moridos (nombre, apellidos, edad, fecha_moricion, hora_moricion, lugar_moricion, causa_moricion) VALUES (?,?,?,?,?,?,?)";
         } else {
-            sql = "update morido set nombre=?,apellidos=?,edad=?,fechaMoricion=?,horaMoricion=?,lugarMoricion=?,causaMoricion=? where id=?";
+            sql = "update moridos set nombre=?,apellidos=?,edad=?,fecha_moricion=?,hora_moricion=?,lugar_moricion=?,causa_moricion=? where id=?";
         }
-
+        System.out.println("sql = " + sql);
         try ( Connection myConn = dataSource.getConnection();  PreparedStatement myStmt = myConn.prepareStatement(sql);) {
             myStmt.setString(1, theMorido.getNombre());
             myStmt.setString(2, theMorido.getApellidos());
@@ -129,7 +129,7 @@ public class MoridoDAOJdbcImpl implements MoridoDAO {
     @Override
     public void deleteById(int theId) {
         // TODO Auto-generated method stub
-        String sql = "delete from morido where id=?";
+        String sql = "delete from moridos where id=?";
         try ( Connection myConn = dataSource.getConnection();
             PreparedStatement myStmt = createPreparedStatement(myConn, theId, sql);) {
             

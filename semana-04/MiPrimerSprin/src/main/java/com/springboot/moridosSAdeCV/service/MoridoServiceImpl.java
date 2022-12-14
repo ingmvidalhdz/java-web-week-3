@@ -1,4 +1,4 @@
-package com.luv2code.springboot.cruddemo.service;
+package com.springboot.moridosSAdeCV.service;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.luv2code.springboot.cruddemo.dao.MoridoDAO;
-import com.luv2code.springboot.cruddemo.entity.Morido;
+import com.springboot.moridosSAdeCV.dao.MoridoDAO;
+import com.springboot.moridosSAdeCV.entity.Morido;
 
 @Service
 public class MoridoServiceImpl implements MoridoService {

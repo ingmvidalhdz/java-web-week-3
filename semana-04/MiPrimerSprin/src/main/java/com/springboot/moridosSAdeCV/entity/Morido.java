@@ -1,4 +1,4 @@
-package com.luv2code.springboot.cruddemo.entity;
+package com.springboot.moridosSAdeCV.entity;
 
 import javax.persistence.*;
 import lombok.*;

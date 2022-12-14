@@ -1,7 +1,7 @@
-package com.luv2code.springboot.cruddemo.dao;
+package com.springboot.moridosSAdeCV.dao;
 
 import java.util.List;
-import com.luv2code.springboot.cruddemo.entity.Morido;
+import com.springboot.moridosSAdeCV.entity.Morido;
 
 public interface MoridoDAO {
 
