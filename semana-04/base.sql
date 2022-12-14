@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS `moridos`;
 CREATE TABLE `moridos` (
     `id` INT(11) AUTO_INCREMENT,
     `nombre` VARCHAR(45) DEFAULT NULL,
-    `apelllidos` VARCHAR(45) DEFAULT NULL,
+    `apellidos` VARCHAR(45) DEFAULT NULL,
     `edad` INT(3) DEFAULT 0,
     `fecha_moricion` VARCHAR(45) DEFAULT NULL,
     `hora_moricion` VARCHAR(45) DEFAULT NULL,
