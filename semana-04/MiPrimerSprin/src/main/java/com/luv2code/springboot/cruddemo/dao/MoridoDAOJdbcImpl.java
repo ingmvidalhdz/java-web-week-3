@@ -32,7 +32,7 @@ public class MoridoDAOJdbcImpl implements MoridoDAO {
         try {
             myConn = dataSource.getConnection();
             // create sql statement
-            String sql = "select * from moridos";
+            String sql = "SELECT * FROM moridos";
 
             myStmt = myConn.createStatement();
 
@@ -71,7 +71,7 @@ public class MoridoDAOJdbcImpl implements MoridoDAO {
     @Override
     public Morido findById(int theId) {
         Morido theMorido = null;
-        String sql = "select * from moridos where id=?";
+        String sql = "SELECT * FROM moridos WHERE id=?";
         try ( Connection myConn = dataSource.getConnection(); 
                 PreparedStatement myStmt = createPreparedStatement(myConn, theId, sql); 
                 ResultSet myRs = myStmt.executeQuery();) {
@@ -102,9 +102,9 @@ public class MoridoDAOJdbcImpl implements MoridoDAO {
         // TODO Auto-generated method stub
         String sql = null;
         if (theMorido.getId() == 0) {
-            sql = "insert into morido (nombre, apellidos, edad, fechaMoricion, horaMoricion, lugarMoricion, causaMoricion) VALUES (?,?,?,?,?,?,?)";
+            sql = "INSERT INTO morido (nombre, apellidos, edad, fechaMoricion, horaMoricion, lugarMoricion, causaMoricion) VALUES (?,?,?,?,?,?,?)";
         } else {
-            sql = "update morido set nombre=?,apellidos=?,edad=?,fechaMoricion=?,horaMoricion=?,lugarMoricion=?,causaMoricion=? where id=?";
+            sql = "UPDATE morido SET nombre=?,apellidos=?,edad=?,fechaMoricion=?,horaMoricion=?,lugarMoricion=?,causaMoricion=? WHERE id=?";
         }
 
         try ( Connection myConn = dataSource.getConnection();  PreparedStatement myStmt = myConn.prepareStatement(sql);) {
@@ -129,7 +129,7 @@ public class MoridoDAOJdbcImpl implements MoridoDAO {
     @Override
     public void deleteById(int theId) {
         // TODO Auto-generated method stub
-        String sql = "delete from morido where id=?";
+        String sql = "DELETE FROM morido WHERE id=?";
         try ( Connection myConn = dataSource.getConnection();
             PreparedStatement myStmt = createPreparedStatement(myConn, theId, sql);) {
             
