@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.config;
+package com.springdemo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,7 +13,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.luv2code.springdemo")
+@ComponentScan("com.springdemo")
 @PropertySource({ "classpath:application.properties" })
 public class DemoAppConfig implements WebMvcConfigurer {
 

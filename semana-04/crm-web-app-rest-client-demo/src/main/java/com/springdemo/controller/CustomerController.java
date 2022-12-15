@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.controller;
+package com.springdemo.controller;
 
 import java.util.List;
 
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.luv2code.springdemo.model.Employee;
-import com.luv2code.springdemo.service.CustomerService;
+import com.springdemo.model.Morido;
+import com.springdemo.service.CustomerService;
 
 @Controller
-@RequestMapping("/customer")
+@RequestMapping("/moridos")
 public class CustomerController {
 
 	// need to inject our customer service
@@ -26,55 +26,55 @@ public class CustomerController {
 	public String listCustomers(Model theModel) {
 		
 		// get customers from the service
-		List<Employee> theCustomers = customerService.getCustomers();
+		List<Morido> theCustomers = customerService.getCustomers();
 				
 		// add the customers to the model
-		theModel.addAttribute("customers", theCustomers);
+		theModel.addAttribute("moridos", theCustomers);
 		
-		return "list-customers";
+		return "list-moridos";
 	}
 	
 	@GetMapping("/showFormForAdd")
 	public String showFormForAdd(Model theModel) {
 		
 		// create model attribute to bind form data
-		Employee theCustomer = new Employee();
+		Morido theCustomer = new Morido();
 		
-		theModel.addAttribute("customer", theCustomer);
+		theModel.addAttribute("moridos", theCustomer);
 		
-		return "customer-form";
+		return "moridos-form";
 	}
 	
 	@PostMapping("/saveCustomer")
-	public String saveCustomer(@ModelAttribute("customer") Employee theCustomer) {
+	public String saveCustomer(@ModelAttribute("moridos") Morido theCustomer) {
 		
 		// save the customer using our service
 		customerService.saveCustomer(theCustomer);	
 		
-		return "redirect:/customer/list";
+		return "redirect:/moridos/list";
 	}
 	
 	@GetMapping("/showFormForUpdate")
-	public String showFormForUpdate(@RequestParam("customerId") int theId,
+	public String showFormForUpdate(@RequestParam("moridosId") int theId,
 									Model theModel) {
 		
 		// get the customer from our service
-		Employee theCustomer = customerService.getCustomer(theId);	
+		Morido theCustomer = customerService.getCustomer(theId);	
 		
 		// set customer as a model attribute to pre-populate the form
-		theModel.addAttribute("customer", theCustomer);
+		theModel.addAttribute("moridos", theCustomer);
 		
 		// send over to our form		
 		return "customer-form";
 	}
 	
 	@GetMapping("/delete")
-	public String deleteCustomer(@RequestParam("customerId") int theId) {
+	public String deleteCustomer(@RequestParam("moridosId") int theId) {
 		
 		// delete the customer
 		customerService.deleteCustomer(theId);
 		
-		return "redirect:/customer/list";
+		return "redirect:/moridos/list";
 	}
 }
 
