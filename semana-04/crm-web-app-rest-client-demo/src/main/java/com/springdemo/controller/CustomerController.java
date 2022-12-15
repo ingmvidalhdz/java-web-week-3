@@ -26,7 +26,7 @@ public class CustomerController {
 	public String listCustomers(Model theModel) {
 		
 		// get customers from the service
-		List<Morido> theCustomers = customerService.getCustomers();
+		List<Morido> theCustomers = customerService.getMoridos();
 				
 		// add the customers to the model
 		theModel.addAttribute("moridos", theCustomers);
@@ -49,7 +49,7 @@ public class CustomerController {
 	public String saveCustomer(@ModelAttribute("moridos") Morido theCustomer) {
 		
 		// save the customer using our service
-		customerService.saveCustomer(theCustomer);	
+		customerService.saveMorido(theCustomer);	
 		
 		return "redirect:/moridos/list";
 	}
@@ -59,20 +59,20 @@ public class CustomerController {
 									Model theModel) {
 		
 		// get the customer from our service
-		Morido theCustomer = customerService.getCustomer(theId);	
+		Morido theCustomer = customerService.getMorido(theId);	
 		
 		// set customer as a model attribute to pre-populate the form
 		theModel.addAttribute("moridos", theCustomer);
 		
 		// send over to our form		
-		return "customer-form";
+		return "moridos-form";
 	}
 	
 	@GetMapping("/delete")
-	public String deleteCustomer(@RequestParam("moridosId") int theId) {
+	public String deleteMorido(@RequestParam("moridosId") int theId) {
 		
 		// delete the customer
-		customerService.deleteCustomer(theId);
+		customerService.deleteMorido(theId);
 		
 		return "redirect:/moridos/list";
 	}

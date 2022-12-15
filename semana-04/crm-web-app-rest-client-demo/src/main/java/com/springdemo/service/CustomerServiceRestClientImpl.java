@@ -33,7 +33,7 @@ public class CustomerServiceRestClientImpl implements CustomerService {
     }
 
     @Override
-    public List<Morido> getCustomers() {
+    public List<Morido> getMoridos() {
 
         logger.info("***OBTENER LISTA DE CLIENTES DESDE EL SERVICE REST CLIENTE");
         logger.info("in getCustomers(): Calling REST API " + crmRestUrl);
@@ -47,31 +47,31 @@ public class CustomerServiceRestClientImpl implements CustomerService {
         // get the list of customers from response
         List<Morido> customers = responseEntity.getBody();
 
-        logger.info("in getCustomers(): customers" + customers);
+        logger.info("in getMorido(): customers" + customers);
 
         return customers;
     }
 
     @Override
-    public Morido getCustomer(int theId) {
+    public Morido getMorido(int theId) {
         logger.info("***OBTENER UN CLIENTE DESDE EL SERVICE REST CLIENTE");
 
-        logger.info("in getCustomer(): Calling REST API " + crmRestUrl);
+        logger.info("in getMorido(): Calling REST API " + crmRestUrl);
 
         // make REST call
         Morido theCustomer
                 = restTemplate.getForObject(crmRestUrl + "/" + theId,
                         Morido.class);
 
-        logger.info("in saveCustomer(): theCustomer=" + theCustomer);
+        logger.info("in saveMorido(): theCustomer=" + theCustomer);
 
         return theCustomer;
     }
 
     @Override
-    public void saveCustomer(Morido theCustomer) {
+    public void saveMorido(Morido theCustomer) {
 
-        logger.info("in saveCustomer(): Calling REST API " + crmRestUrl);
+        logger.info("in saveMorido(): Calling REST API " + crmRestUrl);
 
         int employeeId = theCustomer.getId();
 
@@ -89,11 +89,11 @@ public class CustomerServiceRestClientImpl implements CustomerService {
             restTemplate.put(crmRestUrl, theCustomer);
         }
 
-        logger.info("in saveCustomer(): success");
+        logger.info("in saveMorido(): success");
     }
 
     @Override
-    public void deleteCustomer(int theId) {
+    public void deleteMorido(int theId) {
         logger.info("***BORRAR UN CLIENTE DESDE EL SERVICE REST CLIENTE");
 
         logger.info("in deleteCustomer(): Calling REST API " + crmRestUrl);

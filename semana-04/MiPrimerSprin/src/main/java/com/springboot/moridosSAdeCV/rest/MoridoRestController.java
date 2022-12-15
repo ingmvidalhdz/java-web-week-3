@@ -28,7 +28,7 @@ public class MoridoRestController {
 	// add mapping for GET /employees/{employeeId}
 	
 	@GetMapping("/moridos/{moridoId}")
-	public Morido getEmployee(@PathVariable int moridoId) throws Exception {
+	public Morido getMorido(@PathVariable int moridoId) throws Exception {
 		
 		Morido theEmployee = employeeService.findById(moridoId);
 		
@@ -42,7 +42,7 @@ public class MoridoRestController {
 	// add mapping for POST /employees - add new employee
 	
 	@PostMapping("/moridos")
-	public Morido addEmployee(@RequestBody Morido theMorido) {
+	public Morido addMorido(@RequestBody Morido theMorido) {
 		
 		// also just in case they pass an id in JSON ... set id to 0
 		// this is to force a save of new item ... instead of update
@@ -55,7 +55,7 @@ public class MoridoRestController {
 	// add mapping for PUT /employees - update existing employee
 	
 	@PutMapping("/moridos")
-	public Morido updateEmployee(@RequestBody Morido theMorido) {
+	public Morido updateMorido(@RequestBody Morido theMorido) {
 		
 		employeeService.save(theMorido);
 		
@@ -65,7 +65,7 @@ public class MoridoRestController {
 	// add mapping for DELETE /employees/{employeeId} - delete employee
 	
 	@DeleteMapping("/moridos/{moridoId}")
-	public String deleteEmployee(@PathVariable int moridoId) {
+	public String deleteMorido(@PathVariable int moridoId) {
 		
 		Morido tempEmployee = employeeService.findById(moridoId);
 		

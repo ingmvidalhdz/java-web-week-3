@@ -6,12 +6,12 @@ import com.springdemo.model.Morido;
 
 public interface CustomerService {
 
-	public List<Morido> getCustomers();
+	public List<Morido> getMoridos();
 
-	public void saveCustomer(Morido theCustomer);
+	public void saveMorido(Morido theCustomer);
 
-	public Morido getCustomer(int theId);
+	public Morido getMorido(int theId);
 
-	public void deleteCustomer(int theId);
+	public void deleteMorido(int theId);
 	
 }
