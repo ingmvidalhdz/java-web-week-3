@@ -12,7 +12,7 @@
 <body>
 	<div class="container">
 		<div class="container-title"> 
-			<h2 class="title-page">Funeraria Bellakat</h2>
+			<h2 class="title-page">Funeraria Bellakoza</h2>
 		</div>
 		<form:form class="form center" action="saveMorido"
 			modelAttribute="moridos" method="POST">
