@@ -23,7 +23,7 @@ public class CustomerController {
 	private CustomerService customerService;
 	
 	@GetMapping("/list")
-	public String listCustomers(Model theModel) {
+	public String listMoridos(Model theModel) {
 		
 		// get customers from the service
 		List<Morido> theCustomers = customerService.getMoridos();
@@ -45,7 +45,7 @@ public class CustomerController {
 		return "moridos-form";
 	}
 	
-	@PostMapping("/saveCustomer")
+	@PostMapping("/saveMorido")
 	public String saveCustomer(@ModelAttribute("moridos") Morido theCustomer) {
 		
 		// save the customer using our service

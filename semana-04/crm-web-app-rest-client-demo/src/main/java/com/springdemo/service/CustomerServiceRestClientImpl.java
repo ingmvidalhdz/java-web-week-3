@@ -96,7 +96,7 @@ public class CustomerServiceRestClientImpl implements CustomerService {
     public void deleteMorido(int theId) {
         logger.info("***BORRAR UN CLIENTE DESDE EL SERVICE REST CLIENTE");
 
-        logger.info("in deleteCustomer(): Calling REST API " + crmRestUrl);
+        logger.info("in deleteMorido(): Calling REST API " + crmRestUrl);
 
         // make REST call
         restTemplate.delete(crmRestUrl + "/" + theId);
